@@ -4,6 +4,6 @@ public:
         sort(nums.begin(), nums.end(), [](const int &a, const int &b) {
             return (a % 2) < (b % 2);
         });
-        return nums;
+        return move(nums);
     }
 };
