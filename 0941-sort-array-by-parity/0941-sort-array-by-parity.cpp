@@ -1,22 +1,11 @@
+static bool cmp(int &a,int &b)
+{
+    return (a%2)<(b%2);
+}
 class Solution {
 public:
     vector<int> sortArrayByParity(vector<int>& nums) {
-        int n=nums.size();
-        vector<int>ans;
-        vector<int>odds;
-        for(int i=0;i<n;i++)
-        {
-            if(nums[i]%2==0)
-            {ans.push_back(nums[i]);}
-            else
-            {
-                odds.push_back(nums[i]);
-            }
-        }
-        for(int i=0;i<odds.size();i++)
-        {
-            ans.push_back(odds[i]);
-        }
-        return ans;
+        sort(nums.begin(),nums.end(),cmp);
+        return nums;
     }
 };
